@@ -47,6 +47,17 @@ public class CatchLog {
 	
 	@Column(name="image_url")
 	private String imageUrl;
+	
+	@Column(name="moon_phase")
+	private String moonPhase;
+	
+	@Column(name="water_type")
+	private String waterType;
+	
+	@Column(name="water_temp")
+	private Double waterTemp;
+	
+	
 
 	// Constructors
 	public CatchLog() {
@@ -158,13 +169,37 @@ public class CatchLog {
 		this.imageUrl = imageUrl;
 	}
 
+	public String getMoonPhase() {
+		return moonPhase;
+	}
+
+	public void setMoonPhase(String moonPhase) {
+		this.moonPhase = moonPhase;
+	}
+
+	public String getWaterType() {
+		return waterType;
+	}
+
+	public void setWaterType(String waterType) {
+		this.waterType = waterType;
+	}
+
+	public Double getWaterTemp() {
+		return waterTemp;
+	}
+
+	public void setWaterTemp(Double waterTemp) {
+		this.waterTemp = waterTemp;
+	}
+
 	// toString
 	@Override
 	public String toString() {
 		return "Catch Log ID: " + id + "\nSpecies: " + species + "\nScientific Name: " + scientificName + "\nWeight in Pounds: "
 				+ weightInLbs + "\nLength in Inches" + lengthInInches + "\nBait Used: " + baitUsed + "\nCatch and Release: "
-				+ catchAndRelease + "\nDate Caught: " + dateCaught + "\nTime Caught: " + timeCaught
-				+ "\nLocation: \n\tLatitude: " + latitude + " Longitude: " + longitude + "\nNotes: " + notes + "\nImage URL: " + imageUrl;
+				+ catchAndRelease + "\nDate Caught: " + dateCaught + "\nTime Caught: " + timeCaught + "\nMoon Phase: " + moonPhase + "\nWater Type: " + waterType
+				+  "\nWater Temperature: " + waterTemp + "\nLocation: \n\tLatitude: " + latitude + " Longitude: " + longitude + "\nNotes: " + notes + "\nImage URL: " + imageUrl;
 	}
 	
 
