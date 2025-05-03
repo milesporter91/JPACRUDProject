@@ -57,7 +57,11 @@ public class CatchLog {
 	@Column(name="water_temp")
 	private Double waterTemp;
 	
+	@Column(name="fisherman_id")
+	private int fishermanId;
 	
+	
+
 
 	// Constructors
 	public CatchLog() {
@@ -192,11 +196,20 @@ public class CatchLog {
 	public void setWaterTemp(Double waterTemp) {
 		this.waterTemp = waterTemp;
 	}
+	
+
+	public int getFishermanId() {
+		return fishermanId;
+	}
+
+	public void setFishermanId(int fishermanId) {
+		this.fishermanId = fishermanId;
+	}
 
 	// toString
 	@Override
 	public String toString() {
-		return "Catch Log ID: " + id + "\nSpecies: " + species + "\nScientific Name: " + scientificName + "\nWeight in Pounds: "
+		return "Catch Log ID: " + id +  "\nFisherman ID: " + fishermanId +  "\nSpecies: " + species + "\nScientific Name: " + scientificName + "\nWeight in Pounds: "
 				+ weightInLbs + "\nLength in Inches" + lengthInInches + "\nBait Used: " + baitUsed + "\nCatch and Release: "
 				+ catchAndRelease + "\nDate Caught: " + dateCaught + "\nTime Caught: " + timeCaught + "\nMoon Phase: " + moonPhase + "\nWater Type: " + waterType
 				+  "\nWater Temperature: " + waterTemp + "\nLocation: \n\tLatitude: " + latitude + " Longitude: " + longitude + "\nNotes: " + notes + "\nImage URL: " + imageUrl;

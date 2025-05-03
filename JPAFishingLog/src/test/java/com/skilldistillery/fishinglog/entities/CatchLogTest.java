@@ -41,7 +41,7 @@ class CatchLogTest {
 	}
 
 	@Test
-	void test() {
+	void test_() {
 		assertNotNull(catchLog);
 		assertEquals("Largemouth Bass".toLowerCase(), catchLog.getSpecies().toLowerCase());
 		assertEquals("Spinner".toLowerCase(), catchLog.getBaitUsed().toLowerCase());

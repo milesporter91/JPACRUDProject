@@ -31,4 +31,55 @@ public class CatchLogDAOImpl implements CatchLogDAO {
 		return allCatchLogs;
 	}
 
+	@Override
+	public CatchLog addCatchLog(CatchLog catchLog) {
+		em.persist(catchLog);
+		return catchLog;
+		
+	}
+
+	@Override
+	public CatchLog updateCatchLog(int catchLogId, CatchLog catchLog) {
+		
+		CatchLog managedCatchLog = em.find(CatchLog.class, catchLogId);
+		
+		managedCatchLog.setFishermanId(catchLog.getFishermanId());
+		managedCatchLog.setDateCaught(catchLog.getDateCaught());
+		managedCatchLog.setTimeCaught(catchLog.getTimeCaught());
+		managedCatchLog.setMoonPhase(catchLog.getMoonPhase());
+		managedCatchLog.setWaterType(catchLog.getWaterType());
+		managedCatchLog.setWaterTemp(catchLog.getWaterTemp());
+		managedCatchLog.setSpecies(catchLog.getSpecies());
+		managedCatchLog.setScientificName(catchLog.getScientificName());
+		managedCatchLog.setWeightInLbs(catchLog.getWeightInLbs());
+		managedCatchLog.setLengthInInches(catchLog.getLengthInInches());
+		managedCatchLog.setBaitUsed(catchLog.getBaitUsed());
+		managedCatchLog.setCatchAndRelease(catchLog.isCatchAndRelease());
+		managedCatchLog.setLatitude(catchLog.getLatitude());
+		managedCatchLog.setLongitude(catchLog.getLongitude());
+		managedCatchLog.setNotes(catchLog.getNotes());
+		managedCatchLog.setImageUrl(catchLog.getImageUrl());
+		
+		
+		
+		return managedCatchLog;
+	}
+
+	@Override
+	public boolean deleteCatchLog(int catchLogId) {
+		boolean deleted = true;
+		try {
+			CatchLog managedCatchLog = em.find(CatchLog.class, catchLogId);
+			
+			
+			em.remove(managedCatchLog);
+			
+		} catch (Exception e) {
+			deleted = false;
+			e.printStackTrace();
+		}
+		return deleted;
+		
+	}
+
 }

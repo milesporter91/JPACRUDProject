@@ -8,4 +8,8 @@ public interface CatchLogDAO {
 
 	CatchLog findById(int catchLogId);
 	List<CatchLog> findAll();
+	CatchLog addCatchLog(CatchLog catchLog);
+	CatchLog updateCatchLog(int catchLogId, CatchLog catchLog);
+	boolean deleteCatchLog(int catchLogId);
+	
 }
