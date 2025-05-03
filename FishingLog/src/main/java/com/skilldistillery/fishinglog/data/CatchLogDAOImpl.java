@@ -54,7 +54,7 @@ public class CatchLogDAOImpl implements CatchLogDAO {
 		managedCatchLog.setWeightInLbs(catchLog.getWeightInLbs());
 		managedCatchLog.setLengthInInches(catchLog.getLengthInInches());
 		managedCatchLog.setBaitUsed(catchLog.getBaitUsed());
-		managedCatchLog.setCatchAndRelease(catchLog.isCatchAndRelease());
+		managedCatchLog.setCatchAndRelease(catchLog.getCatchAndRelease());
 		managedCatchLog.setLatitude(catchLog.getLatitude());
 		managedCatchLog.setLongitude(catchLog.getLongitude());
 		managedCatchLog.setNotes(catchLog.getNotes());
@@ -70,8 +70,6 @@ public class CatchLogDAOImpl implements CatchLogDAO {
 		boolean deleted = true;
 		try {
 			CatchLog managedCatchLog = em.find(CatchLog.class, catchLogId);
-			
-			
 			em.remove(managedCatchLog);
 			
 		} catch (Exception e) {

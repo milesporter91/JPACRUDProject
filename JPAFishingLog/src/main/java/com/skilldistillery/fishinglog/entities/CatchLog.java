@@ -24,10 +24,10 @@ public class CatchLog {
 	private String scientificName;
 	
 	@Column(name="weight_lbs")
-	private String weightInLbs;
+	private Double weightInLbs;
 	
 	@Column(name="length_inches")
-	private String lengthInInches;
+	private Double lengthInInches;
 	
 	@Column(name="bait_used")
 	private String baitUsed;
@@ -93,19 +93,19 @@ public class CatchLog {
 		this.scientificName = scientificName;
 	}
 
-	public String getWeightInLbs() {
+	public Double getWeightInLbs() {
 		return weightInLbs;
 	}
 
-	public void setWeightInLbs(String weightInLbs) {
+	public void setWeightInLbs(Double weightInLbs) {
 		this.weightInLbs = weightInLbs;
 	}
 
-	public String getLengthInInches() {
+	public Double getLengthInInches() {
 		return lengthInInches;
 	}
 
-	public void setLengthInInches(String lengthInInches) {
+	public void setLengthInInches(Double lengthInInches) {
 		this.lengthInInches = lengthInInches;
 	}
 
@@ -117,7 +117,7 @@ public class CatchLog {
 		this.baitUsed = baitUsed;
 	}
 
-	public boolean isCatchAndRelease() {
+	public boolean getCatchAndRelease() {
 		return catchAndRelease;
 	}
 
