@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+body {
+	background-image:
+		url('https://t4.ftcdn.net/jpg/04/56/10/25/360_F_456102510_KIyIHnmohnTZt8OQqTVbZ6IYgszpyjRb.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: 'Courier New';
+	font-weight: bold;
+	padding: 50px;
+
+}
+
+.column_title {
+	font-style: italic;
+	text-decoration: underline;
+	
+}
+
+.site_title {
+	text-align: center;
+		font-family: 'Garamond';
+		color: seagreen;
+		font-style: italic strong;
+}
+
+.fish_picture {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 400px;
+	width: 400px;
+}
+
+#page_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  text-align: center;
+  background-color: #9FE2BF;
+  height: 100%;
+  width: 75%;
+}
+
+#create_page_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  text-align: center;
+  background-color: #9FE2BF;
+  height: 50%;
+  width: 50%;
+  margin-left: 500;
+}
+
+.message {
+	background-color: seagreen;
+	color: limegreen;
+	display: flex;
+	width: 300px;
+}
+
+.embed_map {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.catch_info {
+	background-color: teal;
+}
+
+.buttons {
+	margin-bottom: 2px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.embed_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* spacing between photo and map */
+  flex-wrap: wrap; /* allows responsiveness on smaller screens */
+}
+
+.fish_picture img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.site_logo {
+	width: 600px;
+	height: 400px;
+	margin-bottom: 5px;
+}

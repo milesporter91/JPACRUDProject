@@ -1,5 +1,7 @@
 package com.skilldistillery.fishinglog.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -94,6 +96,16 @@ public class CatchLogController {
 			mv.addObject("message", "Catch Log deleted.");
 			mv.setViewName("home");
 		}
+		return mv;
+	}
+	
+	@RequestMapping(path = "showAll.do", method= RequestMethod.GET)
+	public ModelAndView findAllCatchLogs() {
+		ModelAndView mv = new ModelAndView();
+		List<CatchLog> catchLogList = catchDAO.findAll();
+		mv.addObject("catchLogList", catchLogList);
+		mv.setViewName("catchlog/show");
+		
 		return mv;
 	}
 

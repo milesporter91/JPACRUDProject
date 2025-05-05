@@ -58,7 +58,7 @@ public class CatchLog {
 	private Double waterTemp;
 	
 	@Column(name="fisherman_id")
-	private int fishermanId;
+	private Integer fishermanId;
 	
 	
 
@@ -198,11 +198,11 @@ public class CatchLog {
 	}
 	
 
-	public int getFishermanId() {
+	public Integer getFishermanId() {
 		return fishermanId;
 	}
 
-	public void setFishermanId(int fishermanId) {
+	public void setFishermanId(Integer fishermanId) {
 		this.fishermanId = fishermanId;
 	}
 
