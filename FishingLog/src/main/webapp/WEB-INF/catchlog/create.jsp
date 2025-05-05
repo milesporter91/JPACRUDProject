@@ -49,7 +49,7 @@
 					</tr>
 					<tr>
 						<td><label for="species">Add Species:</label></td>
-						<td><input type="text" name="species"></td>
+						<td><input type="text" name="species" required></td>
 					</tr>
 					<tr>
 						<td><label for="scientificName">Add Scientific Name:</label></td>
@@ -70,7 +70,7 @@
 					<tr>
 						<td><label for="catchAndRelease">Add Catch and
 								Release (True or False):</label></td>
-						<td><input type="text" name="catchAndRelease"></td>
+						<td><input type="text" name="catchAndRelease" required></td>
 					</tr>
 					<tr>
 						<td><label for="latitude">Add Latitude:</label></td>
