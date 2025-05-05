@@ -23,7 +23,13 @@
 		<div class="container" id="page_content">
 			<c:choose>
 				<c:when test="${empty catchLog and empty catchLogList}">
-					<p>Catch Log not found</p>
+					<div class="container" id="page_content">
+						<form action="getCatchLog.do" method="GET">
+							<img src="images/hooklinelogger.png" class="site_logo" /><br>
+								<p>Catch Log not found</p>
+							Catch Log ID: <input type="text" name="catchLogId" /> <input
+								class="btn btn-outline-primary" type="submit" value="Show Catch" />
+						</form>
 				</c:when>
 				<c:when test="${not empty catchLogList }">
 
@@ -41,14 +47,13 @@
 								<td>${c.weightInLbs}</td>
 								<td>${c.lengthInInches}</td>
 								<td>${c.dateCaught}</td>
-								<td><a href="/getCatchLog.do?catchLogId=${c.id}" type="button"
-									class="btn btn-primary">View</a></td>
+								<td><a href="/getCatchLog.do?catchLogId=${c.id}"
+									type="button" class="btn btn-primary">View</a></td>
 								<td><a href="goToUpdateForm.do?id=${ c.id }" type="button"
 									class="btn btn-secondary">Update</a></td>
 								<td><form action="delete.do" method="POST">
 										<input type="hidden" name="catchLogId" value="${c.id}">
-										<input type="submit" class="btn btn-danger"
-											value="Delete" />
+										<input type="submit" class="btn btn-danger" value="Delete" />
 									</form></td>
 							</tr>
 						</c:forEach>
@@ -61,13 +66,16 @@
 							<a href="https://en.wikipedia.org/wiki/${catchLog.species}"
 								target="_blank">${catchLog.species}(${catchLog.scientificName})</a>
 						</h2>
-						<h6>Fisherman ID: ${catchLog.fishermanId} Catch ID: ${catchLog.id}</h6>
+						<h6>Fisherman ID: ${catchLog.fishermanId} Catch ID:
+							${catchLog.id}</h6>
 						<h6>Date: ${catchLog.dateCaught } | Time:
 							${catchLog.timeCaught}</h6>
 						<h6>Water Type: ${catchLog.waterType } | Water Temp:
 							${catchLog.waterTemp}</h6>
-						<h6>Moon Phase: ${catchLog.moonPhase} | Bait Used: ${catchLog.baitUsed}</h6>
-						<h6>Weight(Lbs): ${catchLog.weightInLbs} | Length(Inches): ${catchLog.lengthInInches}</h6>
+						<h6>Moon Phase: ${catchLog.moonPhase} | Bait Used:
+							${catchLog.baitUsed}</h6>
+						<h6>Weight(Lbs): ${catchLog.weightInLbs} | Length(Inches):
+							${catchLog.lengthInInches}</h6>
 						<h6>Catch and Release: ${catchLog.catchAndRelease}</h6>
 						<h6>Notes: ${catchLog.notes}</h6>
 						<hr>
@@ -76,7 +84,8 @@
 								<c:choose>
 									<c:when test="${not empty catchLog.imageUrl }">
 										<br>
-										<img class="fish_picture" src="${catchLog.imageUrl}" alt="Fish Photo" width="400" height="400" />
+										<img class="fish_picture" src="${catchLog.imageUrl}"
+											alt="Fish Photo" width="400" height="400" />
 									</c:when>
 								</c:choose>
 								<c:choose>
@@ -89,18 +98,18 @@
 										</iframe>
 									</c:when>
 								</c:choose>
-								</div>
-								</div>
-								<hr>
-								<a href="goToUpdateForm.do?id=${ catchLog.id }" type="button"
-									class="btn btn-secondary">Update Catch Log</a>
 							</div>
-							<!-- Delete Film Button -->
-							<form action="delete.do" method="POST">
-								<input type="hidden" name="catchLogId" value="${catchLog.id}">
-								<input type="submit" class="btn btn-danger"
-									value="Delete this Catch Log" />
-							</form>
+						</div>
+						<hr>
+						<a href="goToUpdateForm.do?id=${ catchLog.id }" type="button"
+							class="btn btn-secondary">Update Catch Log</a>
+					</div>
+					<!-- Delete Film Button -->
+					<form action="delete.do" method="POST">
+						<input type="hidden" name="catchLogId" value="${catchLog.id}">
+						<input type="submit" class="btn btn-danger"
+							value="Delete this Catch Log" />
+					</form>
 				</c:otherwise>
 			</c:choose>
 			<script
